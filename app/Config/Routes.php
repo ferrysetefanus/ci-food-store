@@ -8,3 +8,13 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 service('auth')->routes($routes);
+
+// routes for categories
+$routes->group('categories', function($routes) {
+    $routes->get('category/(:num)', 'Categories\Categories::categoryProducts/$1');
+});
+
+// routes for product
+$routes->group('products', function($routes) {
+    $routes->get('single-product/(:num)', 'Products\Products::productDetails/$1');
+});

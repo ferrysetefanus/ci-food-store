@@ -144,60 +144,18 @@
         <section id="categories" class="pb-0 gray-bg">
             <h2 class="title">Categories</h2>
             <div class="landing-categories owl-carousel">
-                <div class="item">
-                    <div class="card rounded-0 border-0 text-center">
-                        <img src="assets/img/vegetables.jpg">
-                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                            <!-- <h4 class="card-title">Vegetables</h4> -->
-                            <a href="shop.html" class="btn btn-primary btn-lg">Vegetables</a>
+                <?php foreach($allCategories as $category) : ?>
+                    <div class="item">
+                        <div class="card rounded-0 border-0 text-center">
+                            <img src="<?= base_url("assets/img/".$category["image"].""); ?>">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                <!-- <h4 class="card-title">Vegetables</h4> -->
+                                <a href="<?= base_url('categories/category/'.$category['id'].'') ?>" class="btn btn-primary btn-lg"><?= $category["name"]; ?></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="card rounded-0 border-0 text-center">
-                        <img src="assets/img/fruits.jpg">
-                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                            <!-- <h4 class="card-title">Fruits</h4> -->
-                            <a href="shop.html" class="btn btn-primary btn-lg">Fruits</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card rounded-0 border-0 text-center">
-                        <img src="assets/img/meats.jpg">
-                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                            <!-- <h4 class="card-title">Meats</h4> -->
-                            <a href="shop.html" class="btn btn-primary btn-lg">Meats</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card rounded-0 border-0 text-center">
-                        <img src="assets/img/fish.jpg">
-                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                            <!-- <h4 class="card-title">Fishes</h4> -->
-                            <a href="shop.html" class="btn btn-primary btn-lg">Fishes</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card rounded-0 border-0 text-center">
-                        <img src="assets/img/frozen.jpg">
-                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                            <!-- <h4 class="card-title">Frozen Foods</h4> -->
-                            <a href="shop.html" class="btn btn-primary btn-lg">Frozen Foods</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card rounded-0 border-0 text-center">
-                        <img src="assets/img/package.jpg">
-                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                            <!-- <h4 class="card-title">Package</h4> -->
-                            <a href="shop.html" class="btn btn-primary btn-lg">Package</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
+
             </div>
         </section>
     </div>

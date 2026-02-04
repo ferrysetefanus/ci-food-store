@@ -1,11 +1,15 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Category\Category;
 
 class Home extends BaseController
 {
     public function index(): string
     {
-        return view('home');
+        $categories = new Category;
+
+        $allCategories = $categories->findAll();
+        return view('home', compact('allCategories'));
     }
 }
