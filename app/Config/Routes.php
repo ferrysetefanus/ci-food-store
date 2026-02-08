@@ -17,4 +17,5 @@ $routes->group('categories', function($routes) {
 // routes for product
 $routes->group('products', function($routes) {
     $routes->get('single-product/(:num)', 'Products\Products::productDetails/$1');
+    $routes->get('shop', 'Products\Products::shop');
 });

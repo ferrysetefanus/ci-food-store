@@ -23,6 +23,10 @@ class CreateCategoriesTable extends Migration
                 'type'              => 'VARCHAR',
                 'constraint'        => '200',
             ],
+            'icon' => [
+                'type'              => 'VARCHAR',
+                'constraint'        => '200',
+            ],
             'created_at' => [
                 'type'              => 'TIMESTAMP',
                 'null'              => true,

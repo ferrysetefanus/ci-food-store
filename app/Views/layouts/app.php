@@ -38,7 +38,7 @@
                     <!-- Navbar Menu -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="shop.html" class="nav-link">Shop</a>
+                            <a href="<?= base_url("products/shop") ?>" class="nav-link">Shop</a>
                         </li>
                         <?php if(isset(auth()->user()->username)) : ?>
                         <li class="nav-item dropdown">

@@ -15,6 +15,7 @@ class Category extends Model
     protected $allowedFields    = [
         "name",
         "image",
+        "icon"
     ];
 
     protected bool $allowEmptyInserts = false;
