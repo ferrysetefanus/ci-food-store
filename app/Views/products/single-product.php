@@ -16,6 +16,11 @@
         </div>
         <div class="product-detail">
             <div class="container">
+                <?php if(session()->getFlashdata('success')) : ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="slider-zoom">
@@ -39,19 +44,32 @@
                             </div>
                            
                         </div>
-                        <p class="mb-1">
-                            <strong>Quantity</strong>
-                        </p>
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <input class="form-control" type="number" min="1" data-bts-button-down-class="btn btn-primary" data-bts-button-up-class="btn btn-primary" value="1" name="vertical-spin">
-                            </div>
-                            <div class="col-sm-6"><span class="pt-1 d-inline-block">Pack (1000 gram)</span></div>
-                        </div>
+                        <form action="<?= url_to(('add.to.cart')) ?>" method="POST">
 
-                        <button class="mt-3 btn btn-primary btn-lg">
-                            <i class="fa fa-shopping-basket"></i> Add to Cart
-                        </button>
+                                <input class="form-control" type="hidden" min="1"  value="<?= $product->id; ?>" name="product_id">
+                                <input class="form-control" type="hidden" min="1"  value="<?= $product->price; ?>" name="price">
+                                <input class="form-control" type="hidden" min="1"  value="<?= $product->name; ?>" name="name">
+                                <input class="form-control" type="hidden" min="1"  value="<?= $product->image; ?>" name="image">
+                                                        
+                                <p class="mb-1">
+                                    <strong>Quantity</strong>
+                                </p>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <input name="qty" class="form-control" type="number" min="1" data-bts-button-down-class="btn btn-primary" data-bts-button-up-class="btn btn-primary" value="1" name="vertical-spin">
+                                    </div>
+                                    <div class="col-sm-6"><span class="pt-1 d-inline-block">Pack (1000 gram)</span></div>
+                                </div>
+                                <?php if($count > 0) : ?>
+                                    <button disabled class="mt-3 btn btn-primary btn-lg">
+                                        <i class="fa fa-shopping-basket"></i> Added to Cart
+                                    </button>
+                                <?php else : ?>
+                                    <button name="submit" type="submit" class="mt-3 btn btn-primary btn-lg">
+                                        <i class="fa fa-shopping-basket"></i> Add to Cart
+                                    </button>
+                                <?php endif; ?>
+                        </form> 
                     </div>
                 </div>
             </div>

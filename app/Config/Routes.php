@@ -18,4 +18,5 @@ $routes->group('categories', function($routes) {
 $routes->group('products', function($routes) {
     $routes->get('single-product/(:num)', 'Products\Products::productDetails/$1');
     $routes->get('shop', 'Products\Products::shop');
+    $routes->post('add-to-cart', 'Products\Products::addToCart', ['as' => 'add.to.cart']);
 });

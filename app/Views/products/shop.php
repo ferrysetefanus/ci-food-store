@@ -70,7 +70,7 @@
                                             <!-- <span class="discount">Rp. 300.000</span> -->
                                             <span class="reguler"><?= $wantedProduct->price; ?></span>
                                         </div>
-                                        <a href="<?= base_url('products/single-product/'.$wantedProduct->id.'') ?>detail-product.html" class="btn btn-block btn-primary">
+                                        <a href="<?= base_url('products/single-product/'.$wantedProduct->id.''); ?>detail-product.html" class="btn btn-block btn-primary">
                                             Add to Cart
                                         </a>
 

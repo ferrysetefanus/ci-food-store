@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="card-body">
                                             <h4 class="card-title">
-                                                <a href="<?= base_url('products/single-product'.$product->id.'') ?>"><?= $product->name; ?></a>
+                                                <a href="<?= base_url('products/single-product/'.$product->id.'') ?>"><?= $product->name; ?></a>
                                             </h4>
                                             <div class="card-price">
                                                 <!-- <span class="discount">Rp. 300.000</span> -->
