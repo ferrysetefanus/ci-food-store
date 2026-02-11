@@ -17,6 +17,11 @@ $routes->group('categories', function($routes) {
 // routes for product
 $routes->group('products', function($routes) {
     $routes->get('single-product/(:num)', 'Products\Products::productDetails/$1');
-    $routes->get('shop', 'Products\Products::shop');
+    $routes->get('shop', 'Products\Products::shop', ['as' => 'shop']);
     $routes->post('add-to-cart', 'Products\Products::addToCart', ['as' => 'add.to.cart']);
+
+    $routes->get('cart', 'Products\Products::cart', ['as' => 'cart']);
+
+    //delete from cart
+    $routes->get('delete-from-cart/(:num)', 'Products\Products::deleteFromCart/$1', ['as' => 'cart.delete']);
 });

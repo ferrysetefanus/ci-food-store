@@ -18,7 +18,8 @@ class Cart extends Model
         'qty',
         'image',
         'price',
-        'name'
+        'name',
+        'subtotal'
     ];
 
     protected bool $allowEmptyInserts = false;

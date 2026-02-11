@@ -1,0 +1,1002 @@
+ERROR - 2026-02-11 03:59:19 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci-food-store' in C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci-food-store', 3306, '', 0)
+#1 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\BaseConnection.php(1565): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\BaseConnection.php(1585): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 C:\TBS Food\data penjualan\PROJECT\ci-food-store\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci-food-store' in C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\BaseConnection.php(1565): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\BaseConnection.php(1585): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\TBS Food\data penjualan\PROJECT\ci-food-store\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-02-11 04:00:31 --> Can't create table `ci-food-store`.`cart` (errno: 150 "Foreign key constraint is incorrectly formed")
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(769): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(686): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 APPPATH\Database\Migrations\2026-02-10-151730_CreateCartTable.php(59): CodeIgniter\Database\Forge->createTable('cart')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreateCartTable->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-02-11 04:01:20 --> Can't create table `ci-food-store`.`cart` (errno: 150 "Foreign key constraint is incorrectly formed")
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(769): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(686): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 APPPATH\Database\Migrations\2026-02-10-151730_CreateCartTable.php(59): CodeIgniter\Database\Forge->createTable('cart')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreateCartTable->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-02-11 04:04:48 --> Can't create table `ci-food-store`.`cart` (errno: 150 "Foreign key constraint is incorrectly formed")
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(769): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(686): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `cart` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`product_id` INT(10) UNSIGNED NOT NULL,
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`name` VARCHAR(200) NOT NULL,
+	`qty` VARCHAR(20) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`price` VARCHAR(20) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_cart` PRIMARY KEY(`id`),
+	CONSTRAINT `cart_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 APPPATH\Database\Migrations\2026-02-10-151730_CreateCartTable.php(59): CodeIgniter\Database\Forge->createTable('cart')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreateCartTable->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([...])
+12 SYSTEMPATH\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', [...])
+13 SYSTEMPATH\Commands\Database\MigrateRefresh.php(91): CodeIgniter\CLI\BaseCommand->call('migrate', [...])
+14 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\MigrateRefresh->CodeIgniter\Commands\Database\{closure}()
+15 SYSTEMPATH\Commands\Database\MigrateRefresh.php(89): CodeIgniter\Commands\Database\MigrateRefresh->withSignalsBlocked(Object(Closure))
+16 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run([...])
+17 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', [])
+18 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+19 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+20 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-02-11 04:09:19 --> Table 'categories' already exists
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `categories` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(200) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`icon` VARCHAR(200) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_categories` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(769): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `categories` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(200) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`icon` VARCHAR(200) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_categories` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(686): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `categories` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(200) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`icon` VARCHAR(200) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_categories` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `categories` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(200) NOT NULL,
+	`image` VARCHAR(200) NOT NULL,
+	`icon` VARCHAR(200) NOT NULL,
+	`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT `pk_categories` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 APPPATH\Database\Migrations\2026-02-04-153557_CreateCategoriesTable.php(43): CodeIgniter\Database\Forge->createTable('categories')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreateCategoriesTable->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([...])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [...])
+13 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-02-11 04:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:35:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:35:57 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:36:50 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:37:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:37:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\Categories\Categories::$db is deprecated in APPPATH\Controllers\Categories\Categories.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Categories\Categories->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:37:20 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:37:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:37:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:40:26 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:40:43 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 04:40:48 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 04:40:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 04:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 07:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 07:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 07:45:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 11:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 11:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 11:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 11:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-11 11:06:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-11 11:06:26 --> ParseError: syntax error, unexpected token "}", expecting ";"
+[Method: GET, Route: products/cart]
+in APPPATH\Controllers\Products\Products.php on line 72.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Controllers\\Products\\Products.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Products\\Products')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Products\\Products')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Products\\Products')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('products/cart')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+WARNING - 2026-02-11 11:06:41 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:13:00 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-11 11:13:00 --> ErrorException: Undefined variable $cartItems
+[Method: GET, Route: products/cart]
+in APPPATH\Views\products\cart.php on line 35.
+ 1 APPPATH\Views\products\cart.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cartItems', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\products\\cart.php', 35)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\products\\cart.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('products/cart', [], true)
+ 5 APPPATH\Controllers\Products\Products.php(71): view('products/cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Products\Products->cart()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+WARNING - 2026-02-11 11:13:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:13:38 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:13:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:36:09 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:36:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:36:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:37:40 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:37:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:38:18 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:38:23 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:38:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:38:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:38:41 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:38:46 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:38:46 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:38:50 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:51:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-11 11:51:14 --> ErrorException: Attempt to read property "whole_price" on array
+[Method: GET, Route: products/cart]
+in APPPATH\Views\products\cart.php on line 71.
+ 1 APPPATH\Views\products\cart.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "whole_price" on array', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\products\\cart.php', 71)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\products\\cart.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('products/cart', [], true)
+ 5 APPPATH\Controllers\Products\Products.php(74): view('products/cart', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Products\Products->cart()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+WARNING - 2026-02-11 11:51:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:53:04 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:53:07 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:53:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:53:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:53:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:53:20 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:53:23 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:53:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:57:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 11:58:09 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 11:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 12:00:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 12:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 12:00:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 12:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 12:01:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 12:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 12:01:04 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 12:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 12:01:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 12:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:38:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:38:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:38:18 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+CRITICAL - 2026-02-11 13:38:18 --> ArgumentCountError: Too few arguments to function App\Controllers\Products\Products::deleteFromCart(), 0 passed in C:\TBS Food\data penjualan\PROJECT\ci-food-store\system\CodeIgniter.php on line 951 and exactly 1 expected
+[Method: GET, Route: products/delete-from-cart/5]
+in APPPATH\Controllers\Products\Products.php on line 77.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Products\Products->deleteFromCart()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products\Products))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+WARNING - 2026-02-11 13:39:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:39:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:39:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-11 13:39:24 --> ErrorException: Undefined variable $cart
+[Method: GET, Route: products/delete-from-cart/5]
+in APPPATH\Controllers\Products\Products.php on line 84.
+ 1 APPPATH\Controllers\Products\Products.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cart', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Controllers\\Products\\Products.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Products\Products->deleteFromCart('5')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products\Products))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+WARNING - 2026-02-11 13:40:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:40:18 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:40:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:40:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:40:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:40:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:40:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:40:28 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:40:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:40:32 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:29 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:46 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:41:50 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:41:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:42:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:42:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:42:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:42:13 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:42:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:42:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-02-11 13:42:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\Products\Products::$db is deprecated in APPPATH\Controllers\Products\Products.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Products\Products->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-02-11 13:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

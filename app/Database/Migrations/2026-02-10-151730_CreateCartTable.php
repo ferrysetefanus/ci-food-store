@@ -41,6 +41,10 @@ class CreateCartTable extends Migration
                 'type'              => 'VARCHAR',
                 'constraint'        => '20',
             ],
+            'subtotal' => [
+                'type'              => 'INT',
+                'constraint'        => '20',
+            ],
             'created_at' => [
                 'type'              => 'TIMESTAMP',
                 'null'              => true,

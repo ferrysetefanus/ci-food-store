@@ -51,15 +51,36 @@ class Products extends BaseController
         $product_id = $this->request->getPost('product_id');
         $data = [
             "product_id"    => $product_id,
-            "user_id"    => auth()->user()->id,
-            "qty"    => $this->request->getPost('qty'),
-            "name"    => $this->request->getPost('name'),
-            "price"    => $this->request->getPost('price') * $this->request->getPost('qty'),
-            "image"    => $this->request->getPost('image')
+            "user_id"       => auth()->user()->id,
+            "qty"           => $this->request->getPost('qty'),
+            "name"          => $this->request->getPost('name'),
+            "price"         => $this->request->getPost('price'),
+            "image"         => $this->request->getPost('image'),
+            "subtotal"      => $this->request->getPost('price') * $this->request->getPost('qty')  
         ];
 
         session()->setFlashdata('success', 'Product added to cart');
         $cart->save($data);
         return redirect()->to(base_url('products/single-product/'.$product_id.''));
+    }
+
+    public function cart()
+    {
+        $user_id = auth()->user()->id;
+        // displaying cart item
+        $cartItem = $this->db->table('cart')->where('user_id', $user_id)->orderBy('created_at', 'desc')->get()->getResult();
+
+        $totalPrice = $this->db->table('cart')->selectSum('subtotal', 'whole_price')->where('user_id', $user_id)->get()->getFirstRow();
+        return view("products/cart", compact("cartItem", "totalPrice"));
+    }
+
+    public function deleteFromCart($id)
+    {
+        $deleteProduct = new Cart();
+
+        $deleteProduct->delete($id);
+
+        session()->setFlashdata('danger', 'Product deleted from cart');
+        return redirect()->to(base_url('products/cart'));
     }
 }
