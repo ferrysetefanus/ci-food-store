@@ -5,6 +5,7 @@ namespace App\Controllers\Products;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Product\Cart;
+use App\Models\Product\Order;
 
 class Products extends BaseController
 {
@@ -82,5 +83,63 @@ class Products extends BaseController
 
         session()->setFlashdata('danger', 'Product deleted from cart');
         return redirect()->to(base_url('products/cart'));
+    }
+
+    public function prepareCheckout()
+    {
+        $price = $this->request->getPost('price');
+
+        $session = session();
+
+        $session->set('price', $price);
+
+        if($price > 0) {
+            return redirect()->to(base_url('products/checkout'));
+        }
+
+        
+    }
+
+    public function checkout()
+    {   
+        $session = session();
+    
+        // echo "Total" . $session->get('price');
+        $user_id = auth()->user()->id;
+        // displaying cart item
+        $cartItem = $this->db->table('cart')->where('user_id', $user_id)->orderBy('created_at', 'desc')->get()->getResult();
+        
+        $subtotalPrice = $this->db->table('cart')->selectSum('subtotal', 'whole_price')->where('user_id', $user_id)->get()->getFirstRow();
+        return view("products/checkout", compact('cartItem', 'subtotalPrice'));
+    }
+
+    public function processCheckout() 
+    {
+        $order = new Order;
+
+        
+        $data = [
+            "name"              => $this->request->getPost('name'),
+            "user_id"           => auth()->user()->id,
+            "last_name"         => $this->request->getPost('last_name'),
+            "address"           => $this->request->getPost('address'),
+            "town"              => $this->request->getPost('town'),
+            "state"             => $this->request->getPost('state'),
+            "zip_code"          => $this->request->getPost('zip_code'),
+            "phone"             => $this->request->getPost('phone'),
+            "order_notes"       => $this->request->getPost('order_notes'),
+            "price"             => $this->request->getPost('price'),  
+        ];
+
+        //session()->setFlashdata('success', 'Product added to cart');
+        $order->save($data);
+        if($order) {
+            return redirect()->to(base_url('products/pay-with-paypal'));
+        }
+    }
+
+    public function payWithPaypal()
+    {
+        echo "paypal";
     }
 }

@@ -24,4 +24,18 @@ $routes->group('products', function($routes) {
 
     //delete from cart
     $routes->get('delete-from-cart/(:num)', 'Products\Products::deleteFromCart/$1', ['as' => 'cart.delete']);
+
+    //prepare checkout
+    $routes->post('prepare-checkout', 'Products\Products::prepareCheckout', ['as' => 'prepare.checkout']);
+
+    //checkout
+    $routes->get('checkout', 'Products\Products::checkout', ['as' => 'checkout']);
+
+    //process checkout
+    $routes->post('process-checkout', 'Products\Products::processCheckout', ['as' => 'process.checkout']);
+
+    // pay with paypal
+    $routes->get('pay-with-paypal', 'Products\Products::payWithPaypal', ['as' => 'pay.with.paypal']);
+    
 });
+

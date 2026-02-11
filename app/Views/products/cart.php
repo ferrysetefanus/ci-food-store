@@ -78,7 +78,10 @@
                         <?php if(count($cartItem)) : ?>
                             <div class="clearfix"></div>
                             <h6 class="mt-3">Total: USD. <?= $totalPrice->whole_price; ?> </h6>
-                            <a href="checkout.html" class="btn btn-lg btn-primary">Checkout <i class="fa fa-long-arrow-right"></i></a>
+                            <form action="<?= url_to('prepare.checkout'); ?>" method="POST">
+                                <input name="price" type="hidden" value="<?= $totalPrice->whole_price ?>">
+                                <button type="submit" name="submit" class="btn btn-lg btn-primary">Checkout <i class="fa fa-long-arrow-right"></i></button>
+                            </form>
                         <?php endif; ?>
                     </div>
                 </div>
