@@ -43,10 +43,10 @@
                         <?php if(isset(auth()->user()->username)) : ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="avatar-header"><img src="assets/img/logo/avatar.jpg"></div> <?= auth()->user()->username ?>
+                                <div class="avatar-header"><img src="<?= base_url('assets/img/logo/avatar.jpg'); ?>"></div> <?= auth()->user()->username ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="transaction.html">Transactions History</a>
+                                <a class="dropdown-item" href="<?= url_to('orders.user') ?>">Orders History</a>
                                 <a class="dropdown-item" href="setting.html">Settings</a>
                                 <a class="dropdown-item" href="<?= base_url("logout") ?>">Logout</a>
                             </div>

@@ -117,6 +117,7 @@ class Products extends BaseController
     {
         $order = new Order;
 
+        $price = $this->request->getPost('price');
         
         $data = [
             "name"              => $this->request->getPost('name'),
@@ -128,8 +129,11 @@ class Products extends BaseController
             "zip_code"          => $this->request->getPost('zip_code'),
             "phone"             => $this->request->getPost('phone'),
             "order_notes"       => $this->request->getPost('order_notes'),
-            "price"             => $this->request->getPost('price'),  
+            "price"             => $price,  
         ];
+
+        $session = session();
+        $session->set('full_price', $price);
 
         //session()->setFlashdata('success', 'Product added to cart');
         $order->save($data);
@@ -140,6 +144,21 @@ class Products extends BaseController
 
     public function payWithPaypal()
     {
-        echo "paypal";
+        return view('products/pay');
+    }
+
+    public function success()
+    {
+        $id = auth()->user()->id;
+        $deleteProductsFromCart = $this->db->table('cart')->where('user_id', $id)->delete();
+
+        if($deleteProductsFromCart) {
+            $session = session();
+
+            $session->remove('full_price');
+            // $session->destroy();
+        }
+
+        return view('products/success');
     }
 }
