@@ -60,14 +60,18 @@
                                     </div>
                                     <div class="col-sm-6"><span class="pt-1 d-inline-block">Pack (1000 gram)</span></div>
                                 </div>
-                                <?php if($count > 0) : ?>
-                                    <button disabled class="mt-3 btn btn-primary btn-lg">
-                                        <i class="fa fa-shopping-basket"></i> Added to Cart
-                                    </button>
+                                <?php if(isset(auth()->user()->id)) : ?>
+                                    <?php if($count > 0) : ?>
+                                        <button disabled class="mt-3 btn btn-primary btn-lg">
+                                            <i class="fa fa-shopping-basket"></i> Added to Cart
+                                        </button>
+                                    <?php else : ?>
+                                        <button name="submit" type="submit" class="mt-3 btn btn-primary btn-lg">
+                                            <i class="fa fa-shopping-basket"></i> Add to Cart
+                                        </button>
+                                    <?php endif; ?>
                                 <?php else : ?>
-                                    <button name="submit" type="submit" class="mt-3 btn btn-primary btn-lg">
-                                        <i class="fa fa-shopping-basket"></i> Add to Cart
-                                    </button>
+                                    <p class="alert alert-success mt-4">Login to add this product to the cart</p>
                                 <?php endif; ?>
                         </form> 
                     </div>

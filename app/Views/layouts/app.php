@@ -25,8 +25,8 @@
         <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-transparent" id="page-navigation">
             <div class="container">
                 <!-- Navbar Brand -->
-                <a href="index.html" class="navbar-brand">
-                    <img src="assets/img/logo/logo.png" alt="">
+                <a href="<?= url_to('home') ?>" class="navbar-brand">
+                    <img src="<?= base_url('assets/img/logo/logo.png'); ?>" alt="">
                 </a>
 
                 <!-- Toggle Button -->
@@ -38,8 +38,18 @@
                     <!-- Navbar Menu -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <a href="<?= base_url("/") ?>" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?= base_url("products/shop") ?>" class="nav-link">Shop</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url("about") ?>" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url("contact") ?>" class="nav-link">Contact</a>
+                        </li>
+
                         <?php if(isset(auth()->user()->username)) : ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,11 +57,17 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?= url_to('orders.user') ?>">Orders History</a>
-                                <a class="dropdown-item" href="setting.html">Settings</a>
+                                <a class="dropdown-item" href="<?= url_to('update.user') ?>">Update Info</a>
                                 <a class="dropdown-item" href="<?= base_url("logout") ?>">Logout</a>
                             </div>
                           </li>
+                          <li class="nav-item">
+                            <a href="<?= url_to('cart'); ?>" class="nav-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-shopping-basket"></i> 
+                                <!-- <span class="badge badge-primary">5</span> -->
+                            </a>
 
+                        </li>
                         <?php else : ?>
 
                             <li class="nav-item">
@@ -62,13 +78,7 @@
                             </li>
                         
                         <?php endif;?>
-
-                        <li class="nav-item">
-                            <a href="<?= url_to('cart'); ?>" class="nav-link" data-toggle="" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-shopping-basket"></i> <span class="badge badge-primary">5</span>
-                            </a>
-                          
-                        </li>
+ 
                     </ul>
                 </div>
 

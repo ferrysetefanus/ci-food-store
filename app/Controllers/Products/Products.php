@@ -21,12 +21,24 @@ class Products extends BaseController
 
         $relatedProducts = $this->db->query("SELECT * FROM products where id != '$id' and category_id = '$product->category_id' ORDER BY id desc limit 5")->getResult();
 
-        $count = $this->db->table('cart')
+        // $count = $this->db->table('cart')
+        //               ->where('product_id', $id)
+        //               ->where('user_id', auth()->user()->id)
+        //               ->countAllResults();
+
+        // return view("products/single-product", compact("product", "relatedProducts", "count"));
+
+        if(isset(auth()->user()->id)) {
+            $count = $this->db->table('cart')
                       ->where('product_id', $id)
                       ->where('user_id', auth()->user()->id)
                       ->countAllResults();
 
-        return view("products/single-product", compact("product", "relatedProducts", "count"));
+            return view("products/single-product", compact("product", "relatedProducts", "count"));
+
+        } else {
+            return view("products/single-product", compact("product", "relatedProducts"));
+        }
     }
 
     public function shop()

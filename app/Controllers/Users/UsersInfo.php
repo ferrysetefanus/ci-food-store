@@ -20,4 +20,36 @@ class UsersInfo extends BaseController
 
         return view('users/user-orders', compact('orders'));
     }
+
+    public function EditUserData()
+    {
+        $id = auth()->user()->id;
+
+        $user = $this->db->table('users')->where('id', $id)->get()->getFirstRow();
+
+        return view("users/update-user", compact('user'));
+    }
+
+    public function UpdateUserData()
+    {
+        $id = auth()->user()->id;
+        
+        $data = [
+            'username'      => $this->request->getPost('username'),
+            'address'       => $this->request->getPost('address'),
+            'town'          => $this->request->getPost('town'),
+            'state'         => $this->request->getPost('state'),
+            'zip_code'      => $this->request->getPost('zip_code'),
+            'phone'         => $this->request->getPost('phone')
+        ];
+
+        session()->setFlashdata('update', 'User data updated successfully');
+        
+
+        $userUpdate = $this->db->table('users')->where('id', $id)->update($data);
+
+        if($userUpdate) {
+            return redirect()->to(base_url('users/user-data'));
+        }
+    }
 }

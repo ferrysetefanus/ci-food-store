@@ -5,7 +5,9 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index', ['as' => 'home']);
+$routes->get('/about', 'Home::about', ['as' => 'about']);
+$routes->get('/contact', 'Home::contact', ['as' => 'contact']);
 
 service('auth')->routes($routes);
 
@@ -43,6 +45,8 @@ $routes->group('products', function($routes) {
 });
 
 $routes->group('users', function($routes) {
-    $routes->get('orders', 'Users\UsersInfo::userOrders', ['as' => 'orders.user']);
+    $routes->get('orders', 'Users\UsersInfo::userOrders', ['as' => 'orders.user', 'filter' => 'validateuser']);
+    $routes->get('user-data', 'Users\UsersInfo::EditUserData', ['as' => 'update.user', 'filter' => 'validateuser']);
+    $routes->post('user-data', 'Users\UsersInfo::UpdateUserData', ['as' => 'update.user.data']);
 });
 

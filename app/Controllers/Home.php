@@ -12,4 +12,16 @@ class Home extends BaseController
         $allCategories = $categories->findAll();
         return view('home', compact('allCategories'));
     }
+
+    public function about(): string
+    {
+        
+        return view('pages/about');
+    }
+
+    public function contact(): string
+    {
+        
+        return view('pages/contact');
+    }
 }
