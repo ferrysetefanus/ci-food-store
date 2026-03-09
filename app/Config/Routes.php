@@ -50,3 +50,7 @@ $routes->group('users', function($routes) {
     $routes->post('user-data', 'Users\UsersInfo::UpdateUserData', ['as' => 'update.user.data']);
 });
 
+
+// routes untuk admin
+$routes->get('admins/login', 'Admins\Admins::login', ['as' => 'admins.login']);
+
