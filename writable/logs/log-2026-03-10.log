@@ -1,0 +1,412 @@
+DEBUG - 2026-03-10 02:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 03:51:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 03:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-03-10 03:51:28 --> [DEPRECATED] Creation of dynamic property App\Controllers\Users\UsersInfo::$db is deprecated in APPPATH\Controllers\Users\UsersInfo.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(921): App\Controllers\Users\UsersInfo->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 03:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 03:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 03:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 03:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 03:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 03:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:12:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:20:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:26:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:28:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:30:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 04:52:00 --> CodeIgniter\Router\Exceptions\RouterException: The route for "check.admins.login" cannot be found.
+[Method: GET, Route: admins/login]
+in SYSTEMPATH\Helpers\url_helper.php on line 513.
+ 1 SYSTEMPATH\Helpers\url_helper.php(513): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('check.admins.login')
+ 2 APPPATH\Views\admins\login.php(8): url_to('check.admins.login')
+ 3 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\admins\\login.php')
+ 4 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/login', [], true)
+ 6 APPPATH\Controllers\Admins\Admins.php(13): view('admins/login')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 04:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 04:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 05:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 05:02:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 05:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 05:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-10 06:25:02 --> Column 'user_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `auth_groups_users` (`created_at`, `group`, `user_id`)
+VALUES (\'2026-03-10 06:25:02\',\'admin\',NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(769): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `auth_groups_users` (`created_at`, `group`, `user_id`)
+VALUES (\'2026-03-10 06:25:02\',\'admin\',NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(686): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `auth_groups_users` (`created_at`, `group`, `user_id`)
+VALUES (\'2026-03-10 06:25:02\',\'admin\',NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `auth_groups_users` (`created_at`, `group`, `user_id`)
+VALUES (\'2026-03-10 06:25:02\',\'admin\',NULL)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 SYSTEMPATH\Model.php(382): CodeIgniter\Database\BaseBuilder->insertBatch([...], null, 100)
+ 7 SYSTEMPATH\BaseModel.php(1006): CodeIgniter\Model->doInsertBatch([...], null, 100, false)
+ 8 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(416): CodeIgniter\BaseModel->insertBatch([...])
+ 9 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(368): CodeIgniter\Shield\Entities\User->saveGroupsOrPermissions('group', Object(CodeIgniter\Shield\Models\GroupModel), [...])
+10 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(59): CodeIgniter\Shield\Entities\User->saveGroups()
+11 APPPATH\Database\Seeds\AdminSeeder.php(37): CodeIgniter\Shield\Entities\User->addGroup('admin')
+12 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\AdminSeeder->run()
+13 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\AdminSeeder')
+14 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+15 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+16 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+17 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+18 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-03-10 06:39:01 --> Column 'user_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `auth_groups_users` (`created_at`, `group`, `user_id`)
+VALUES (\'2026-03-10 06:39:01\',\'admin\',NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(769): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `auth_groups_users` (`created_at`, `group`, `user_id`)
+VALUES (\'2026-03-10 06:39:01\',\'admin\',NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(686): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `auth_groups_users` (`created_at`, `group`, `user_id`)
+VALUES (\'2026-03-10 06:39:01\',\'admin\',NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `auth_groups_users` (`created_at`, `group`, `user_id`)
+VALUES (\'2026-03-10 06:39:01\',\'admin\',NULL)', null, false)
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 SYSTEMPATH\Model.php(382): CodeIgniter\Database\BaseBuilder->insertBatch([...], null, 100)
+ 7 SYSTEMPATH\BaseModel.php(1006): CodeIgniter\Model->doInsertBatch([...], null, 100, false)
+ 8 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(416): CodeIgniter\BaseModel->insertBatch([...])
+ 9 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(368): CodeIgniter\Shield\Entities\User->saveGroupsOrPermissions('group', Object(CodeIgniter\Shield\Models\GroupModel), [...])
+10 VENDORPATH\codeigniter4\shield\src\Authorization\Traits\Authorizable.php(59): CodeIgniter\Shield\Entities\User->saveGroups()
+11 APPPATH\Database\Seeds\AdminSeeder.php(40): CodeIgniter\Shield\Entities\User->addGroup('admin')
+12 SYSTEMPATH\Database\Seeder.php(155): App\Database\Seeds\AdminSeeder->run()
+13 SYSTEMPATH\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\AdminSeeder')
+14 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+15 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+16 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+17 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+18 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-03-10 06:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 06:42:21 --> ErrorException: Undefined array key "password"
+[Method: POST, Route: admins/login]
+in APPPATH\Controllers\Admins\Admins.php on line 26.
+ 1 APPPATH\Controllers\Admins\Admins.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password"', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Controllers\\Admins\\Admins.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->checkLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 07:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 07:04:33 --> CodeIgniter\Shield\Exceptions\InvalidArgumentException: Invalid credentials passed to recordLoginAttempt.
+[Method: POST, Route: admins/login]
+in VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php on line 286.
+ 1 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(139): CodeIgniter\Shield\Authentication\Authenticators\Session->recordLoginAttempt([...], false, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36')
+ 2 VENDORPATH\codeigniter4\shield\src\Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 3 APPPATH\Controllers\Admins\Admins.php(24): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->checkLogin()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 07:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 07:19:35 --> CodeIgniter\Shield\Exceptions\LogicException: The user has User Info in Session, so already logged in or in pending login state. If a logged in user logs in again with other account, the session data of the previous user will be used as the new user. Fix your code to prevent users from logging in without logging out or delete the session data. user_id: 1
+[Method: POST, Route: admins/login]
+in VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php on line 648.
+ 1 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(174): CodeIgniter\Shield\Authentication\Authenticators\Session->startLogin(Object(CodeIgniter\Shield\Entities\User))
+ 2 VENDORPATH\codeigniter4\shield\src\Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 3 APPPATH\Controllers\Admins\Admins.php(24): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->checkLogin()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 07:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 07:20:36 --> Error: Class "App\Models\AdminModel" not found
+[Method: POST, Route: admins/login]
+in APPPATH\Controllers\Admins\Admins.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->checkLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 07:21:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 07:21:11 --> CodeIgniter\Shield\Exceptions\LogicException: The user has User Info in Session, so already logged in or in pending login state. If a logged in user logs in again with other account, the session data of the previous user will be used as the new user. Fix your code to prevent users from logging in without logging out or delete the session data. user_id: 6
+[Method: POST, Route: admins/login]
+in VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php on line 648.
+ 1 VENDORPATH\codeigniter4\shield\src\Authentication\Authenticators\Session.php(174): CodeIgniter\Shield\Authentication\Authenticators\Session->startLogin(Object(CodeIgniter\Shield\Entities\User))
+ 2 VENDORPATH\codeigniter4\shield\src\Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->attempt([...])
+ 3 APPPATH\Controllers\Admins\Admins.php(24): CodeIgniter\Shield\Auth->__call('attempt', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->checkLogin()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 07:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 07:31:49 --> ErrorException: Undefined variable $session
+[Method: GET, Route: admins/index]
+in APPPATH\Views\layouts\admin.php on line 59.
+ 1 APPPATH\Views\layouts\admin.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php', 59)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 5 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/index', [], true)
+ 6 APPPATH\Controllers\Admins\Admins.php(51): view('admins/index')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 07:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 07:37:31 --> ErrorException: Undefined variable $session
+[Method: GET, Route: admins/login]
+in APPPATH\Views\layouts\admin.php on line 59.
+ 1 APPPATH\Views\layouts\admin.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php', 59)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 5 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/login', [], true)
+ 6 APPPATH\Controllers\Admins\Admins.php(13): view('admins/login')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+CRITICAL - 2026-03-10 07:37:32 --> ErrorException: Undefined variable $session
+[Method: GET, Route: admins/login]
+in APPPATH\Views\layouts\admin.php on line 59.
+ 1 APPPATH\Views\layouts\admin.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php', 59)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 5 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/login', [], true)
+ 6 APPPATH\Controllers\Admins\Admins.php(13): view('admins/login')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+CRITICAL - 2026-03-10 07:37:39 --> ErrorException: Undefined variable $session
+[Method: GET, Route: admins/login]
+in APPPATH\Views\layouts\admin.php on line 59.
+ 1 APPPATH\Views\layouts\admin.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php', 59)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 5 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/login', [], true)
+ 6 APPPATH\Controllers\Admins\Admins.php(13): view('admins/login')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+CRITICAL - 2026-03-10 07:38:22 --> ErrorException: Undefined variable $session
+[Method: GET, Route: admins/login]
+in APPPATH\Views\layouts\admin.php on line 59.
+ 1 APPPATH\Views\layouts\admin.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php', 59)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 5 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/login', [], true)
+ 6 APPPATH\Controllers\Admins\Admins.php(13): view('admins/login')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+CRITICAL - 2026-03-10 07:38:25 --> ErrorException: Undefined variable $session
+[Method: GET, Route: admins/login]
+in APPPATH\Views\layouts\admin.php on line 59.
+ 1 APPPATH\Views\layouts\admin.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php', 59)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 5 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/login', [], true)
+ 6 APPPATH\Controllers\Admins\Admins.php(13): view('admins/login')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->login()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 07:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 07:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 08:03:33 --> CodeIgniter\Router\Exceptions\RouterException: The route for "admins/logout" cannot be found.
+[Method: GET, Route: admins/index]
+in SYSTEMPATH\Helpers\url_helper.php on line 513.
+ 1 SYSTEMPATH\Helpers\url_helper.php(513): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('admins/logout')
+ 2 APPPATH\Views\layouts\admin.php(60): url_to('admins/logout')
+ 3 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 4 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 6 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/index', [], true)
+ 7 APPPATH\Controllers\Admins\Admins.php(54): view('admins/index', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 08:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 08:05:53 --> CodeIgniter\Router\Exceptions\RouterException: The route for "admins/logout" cannot be found.
+[Method: GET, Route: admins/index]
+in SYSTEMPATH\Helpers\url_helper.php on line 513.
+ 1 SYSTEMPATH\Helpers\url_helper.php(513): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('admins/logout')
+ 2 APPPATH\Views\layouts\admin.php(60): url_to('admins/logout')
+ 3 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 4 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 6 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/index', [], true)
+ 7 APPPATH\Controllers\Admins\Admins.php(54): view('admins/index', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 08:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 08:06:04 --> CodeIgniter\Router\Exceptions\RouterException: The route for "admins/logout" cannot be found.
+[Method: GET, Route: admins/index]
+in SYSTEMPATH\Helpers\url_helper.php on line 513.
+ 1 SYSTEMPATH\Helpers\url_helper.php(513): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('admins/logout')
+ 2 APPPATH\Views\layouts\admin.php(60): url_to('admins/logout')
+ 3 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 4 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 6 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/index', [], true)
+ 7 APPPATH\Controllers\Admins\Admins.php(54): view('admins/index', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 08:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:06:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:06:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-10 08:06:34 --> CodeIgniter\Router\Exceptions\RouterException: The route for "admins/logout" cannot be found.
+[Method: GET, Route: admins/index]
+in SYSTEMPATH\Helpers\url_helper.php on line 513.
+ 1 SYSTEMPATH\Helpers\url_helper.php(513): CodeIgniter\Router\Exceptions\RouterException::forInvalidRoute('admins/logout')
+ 2 APPPATH\Views\layouts\admin.php(60): url_to('admins/logout')
+ 3 SYSTEMPATH\View\View.php(238): include('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\app\\Views\\layouts\\admin.php')
+ 4 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\View\View.php(254): CodeIgniter\View\View->render('layouts/admin.php', [], true)
+ 6 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admins/index', [], true)
+ 7 APPPATH\Controllers\Admins\Admins.php(54): view('admins/index', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admins\Admins->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admins\Admins))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\TBS Food\\data penjualan\\PROJECT\\ci-food-store\\public\\index.php')
+DEBUG - 2026-03-10 08:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:13:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:28:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:31:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:33:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-10 08:55:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

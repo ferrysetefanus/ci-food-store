@@ -52,5 +52,11 @@ $routes->group('users', function($routes) {
 
 
 // routes untuk admin
-$routes->get('admins/login', 'Admins\Admins::login', ['as' => 'admins.login']);
+$routes->get('admins/login', 'Admins\Admins::login', ['as' => 'admins.login', 'filter' => 'loginchecker']);
+$routes->post('admins/login', 'Admins\Admins::checkLogin', ['as' => 'check.admins.login']);
 
+
+$routes->group('admins', ['filter' => 'indexchecker'], function($routes){
+    $routes->get('index', 'Admins\Admins::index', ['as' => 'admins.index']);
+    $routes->get('logout', 'Admins\Admins::logout', ['as' => 'admins.logout']);
+});

@@ -7,7 +7,7 @@
     <title>Admin Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-     <link href="<?= base_url('assets/styles/style.css'); ?>" rel="stylesheet">
+     <link href="<?= base_url("assets/style/style.css"); ?>" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
@@ -22,9 +22,10 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarText">
+        <?php if(isset($session)) : ?>
         <ul class="navbar-nav side-nav" >
           <li class="nav-item">
-            <a class="nav-link text-white" style="margin-left: 20px;" href="index.html">Home
+            <a class="nav-link text-white" style="margin-left: 20px;" href="<?= url_to('admins.index') ?>">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -43,25 +44,28 @@
           </li>
         
         </ul>
+        <?php endif; ?>
         <ul class="navbar-nav ml-md-auto d-md-flex">
+          <?php if(isset($session)) : ?>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admins/login-admins.html">login
+            <a class="nav-link" href="<?= url_to('admins.index'); ?>">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              username
+              <?= $session->name; ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Logout</a>
-              
+              <a class="dropdown-item" href="<?= url_to('admins.logout') ?>">Logout</a>   
           </li>
+          <?php else : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= url_to('admins.login') ?>">login
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <?php endif; ?>
                           
           
         </ul>
@@ -69,11 +73,11 @@
     </div>
     </nav>
     <div class="container-fluid">
-        <div class="app">
-            <?= $this->renderSection("content"); ?>
-        </div>
-  
-          
+
+      <div class="app">
+        <?= $this->renderSection('content'); ?>
+      </div>
+
     </div>
   </div>
 <script type="text/javascript">

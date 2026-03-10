@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1773132911;csrf_test_name|s:32:"b55db34e72e8f17933d68fe349336bd6";user|a:1:{s:2:"id";i:6;}id|i:6;name|s:5:"admin";email|s:15:"admin@gmail.com";isLoggedIn|b:1;_ci_previous_url|s:34:"http://localhost:8080/admins/index";

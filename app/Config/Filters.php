@@ -14,6 +14,8 @@ use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\CheckPrice;
 use App\Filters\ValidateUser;
+use App\Filters\IndexChecker;
+use App\Filters\LoginChecker;
 
 class Filters extends BaseFilters
 {
@@ -37,7 +39,9 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'checkprice'    => CheckPrice::class,
-        'validateuser'    => ValidateUser::class,
+        'validateuser'  => ValidateUser::class,
+        'indexchecker'  => IndexChecker::class,
+        'loginchecker'  => LoginChecker::class,
     ];
 
     /**
