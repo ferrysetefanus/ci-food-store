@@ -8,6 +8,11 @@ use App\Models\Admin\Admin;
 
 class Admins extends BaseController
 {
+
+    public function __construct() {
+        $this->db = \Config\Database::connect();
+    }
+
     public function login()
     {
         return view('admins/login');
@@ -43,15 +48,23 @@ class Admins extends BaseController
             $session->set($ses_data);
             return redirect()->to('admins/index');
         } else {
-            $session->setFlashdata('msg', 'Password is incorrect');
-            return redirect()->to('admins/login');
+            return redirect()->to('admins/login')->with('msg', 'Password is incorrect');
         }
     }
 
     public function index() {
 
         $session = session();
-        return view ('admins/index', compact('session'));
+
+        $countProduct = $this->db->table('products')->countAllResults();
+
+        $countCategories = $this->db->table('categories')->countAllResults();
+
+        $countOrders = $this->db->table('orders')->countAllResults();
+
+        $countAdmins = $this->db->table('admins')->countAllResults();
+
+        return view ('admins/index', compact('session', 'countProduct', 'countCategories', 'countOrders', 'countAdmins'));
     }
 
     public function logout() {
@@ -63,5 +76,14 @@ class Admins extends BaseController
         $session->destroy();
 
         return redirect()->to('admins/login')->with("msg", "You have been logged out");
+    }
+
+    public function allAdmins() {
+
+        $session = session();
+
+        $admins = $this->db->query("SELECT * FROM admins ORDER BY created_at DESC")->getResult();
+
+        return view("admins/all-admins", compact('session', 'admins'));
     }
 }

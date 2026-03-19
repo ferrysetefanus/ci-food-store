@@ -59,4 +59,5 @@ $routes->post('admins/login', 'Admins\Admins::checkLogin', ['as' => 'check.admin
 $routes->group('admins', ['filter' => 'indexchecker'], function($routes){
     $routes->get('index', 'Admins\Admins::index', ['as' => 'admins.index']);
     $routes->get('logout', 'Admins\Admins::logout', ['as' => 'admins.logout']);
+    $routes->get('all-admins', 'Admins\Admins::allAdmins', ['as' => 'admins.all']);
 });
